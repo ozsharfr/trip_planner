@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_5977824f2f0020bf77ed2a764135fcb2 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_5977824f2f0020bf77ed2a764135fcb2" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_5977824f2f0020bf77ed2a764135fcb2 = L.map(
+                "map_5977824f2f0020bf77ed2a764135fcb2",
+                {
+                    center: [46.12573999999999, 24.47278],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 8,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_c17a8163bcf004748dba7bcffccd4a34 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_c17a8163bcf004748dba7bcffccd4a34.addTo(map_5977824f2f0020bf77ed2a764135fcb2);
+        
+    
+            var marker_cluster_24f984daf64347292e3c076519140ba8 = L.markerClusterGroup(
+                {
+}
+            );
+        
+    
+            var marker_ffd73cf5d44afd3f627c869285de88f8 = L.marker(
+                [46.6475, 23.6167],
+                {
+}
+            ).addTo(marker_cluster_24f984daf64347292e3c076519140ba8);
+        
+    
+            var icon_a5c65213c3cd520487eb3f80e3f4fecd = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_5e563f4786971e6e714855dd919a5bb4 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_f353a1401d5df919a018989fbee85af7 = $(`<div id="html_f353a1401d5df919a018989fbee85af7" style="width: 100.0%; height: 100.0%;"><b>Day 1</b>: Cluj-Napoca</div>`)[0];
+                popup_5e563f4786971e6e714855dd919a5bb4.setContent(html_f353a1401d5df919a018989fbee85af7);
+            
+        
+
+        marker_ffd73cf5d44afd3f627c869285de88f8.bindPopup(popup_5e563f4786971e6e714855dd919a5bb4)
+        ;
+
+        
+    
+    
+            marker_ffd73cf5d44afd3f627c869285de88f8.bindTooltip(
+                `<div>
+                     Day 1: Cluj-Napoca - Arrival in Cluj-Napoca
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_ffd73cf5d44afd3f627c869285de88f8.setIcon(icon_a5c65213c3cd520487eb3f80e3f4fecd);
+            
+    
+            var marker_0ed9f4f77403a9fb251338af7d0c33cd = L.marker(
+                [46.4833, 23.4667],
+                {
+}
+            ).addTo(marker_cluster_24f984daf64347292e3c076519140ba8);
+        
+    
+            var icon_30ff36c4bc8a0dc1aa9fa984ba21e517 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_206041b709047c5ca6673ea0f80064d5 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_0360025399c59e2777eb240b0f7463fa = $(`<div id="html_0360025399c59e2777eb240b0f7463fa" style="width: 100.0%; height: 100.0%;"><b>Day 2</b>: Turda Gorge</div>`)[0];
+                popup_206041b709047c5ca6673ea0f80064d5.setContent(html_0360025399c59e2777eb240b0f7463fa);
+            
+        
+
+        marker_0ed9f4f77403a9fb251338af7d0c33cd.bindPopup(popup_206041b709047c5ca6673ea0f80064d5)
+        ;
+
+        
+    
+    
+            marker_0ed9f4f77403a9fb251338af7d0c33cd.bindTooltip(
+                `<div>
+                     Day 2: Turda Gorge - Exploring the Turda Gorge national park
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_0ed9f4f77403a9fb251338af7d0c33cd.setIcon(icon_30ff36c4bc8a0dc1aa9fa984ba21e517);
+            
+    
+            var marker_239514dd00c70e188d58d56dbfcb44c2 = L.marker(
+                [46.0333, 23.5],
+                {
+}
+            ).addTo(marker_cluster_24f984daf64347292e3c076519140ba8);
+        
+    
+            var icon_b97ef109ef84ec739c009f5c9abfe6be = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c69c59f41d8c0d836d56fc987cf2a663 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_e185e03402e6613e6460e4ee8cccc3ea = $(`<div id="html_e185e03402e6613e6460e4ee8cccc3ea" style="width: 100.0%; height: 100.0%;"><b>Day 3</b>: Alba Iulia</div>`)[0];
+                popup_c69c59f41d8c0d836d56fc987cf2a663.setContent(html_e185e03402e6613e6460e4ee8cccc3ea);
+            
+        
+
+        marker_239514dd00c70e188d58d56dbfcb44c2.bindPopup(popup_c69c59f41d8c0d836d56fc987cf2a663)
+        ;
+
+        
+    
+    
+            marker_239514dd00c70e188d58d56dbfcb44c2.bindTooltip(
+                `<div>
+                     Day 3: Alba Iulia - Visiting the Alba Iulia citadel
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_239514dd00c70e188d58d56dbfcb44c2.setIcon(icon_b97ef109ef84ec739c009f5c9abfe6be);
+            
+    
+            var marker_21764d1a2f40f0449b08bfa9b6aa5904 = L.marker(
+                [46.2667, 24.4833],
+                {
+}
+            ).addTo(marker_cluster_24f984daf64347292e3c076519140ba8);
+        
+    
+            var icon_fe22918a42d9f70be7a79861aa8f10ab = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8623b0938befd9f80e591fda373d2965 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_9f211f3ef51b8e1d327b4a75a8ae884b = $(`<div id="html_9f211f3ef51b8e1d327b4a75a8ae884b" style="width: 100.0%; height: 100.0%;"><b>Day 4</b>: Sighisoara</div>`)[0];
+                popup_8623b0938befd9f80e591fda373d2965.setContent(html_9f211f3ef51b8e1d327b4a75a8ae884b);
+            
+        
+
+        marker_21764d1a2f40f0449b08bfa9b6aa5904.bindPopup(popup_8623b0938befd9f80e591fda373d2965)
+        ;
+
+        
+    
+    
+            marker_21764d1a2f40f0449b08bfa9b6aa5904.bindTooltip(
+                `<div>
+                     Day 4: Sighisoara - Discovering the medieval town of Sighisoara
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_21764d1a2f40f0449b08bfa9b6aa5904.setIcon(icon_fe22918a42d9f70be7a79861aa8f10ab);
+            
+    
+            var marker_01fadd25ace0e29e13612cc82ba3582d = L.marker(
+                [46.1833, 25.0167],
+                {
+}
+            ).addTo(marker_cluster_24f984daf64347292e3c076519140ba8);
+        
+    
+            var icon_35c422469f41ff627770534bd9f671ae = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_6e1fb2a76bd99f016160fe6bb0b2138b = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_50c6b9e59a36b6d67da117e24b478295 = $(`<div id="html_50c6b9e59a36b6d67da117e24b478295" style="width: 100.0%; height: 100.0%;"><b>Day 5</b>: Bisesti</div>`)[0];
+                popup_6e1fb2a76bd99f016160fe6bb0b2138b.setContent(html_50c6b9e59a36b6d67da117e24b478295);
+            
+        
+
+        marker_01fadd25ace0e29e13612cc82ba3582d.bindPopup(popup_6e1fb2a76bd99f016160fe6bb0b2138b)
+        ;
+
+        
+    
+    
+            marker_01fadd25ace0e29e13612cc82ba3582d.bindTooltip(
+                `<div>
+                     Day 5: Bisesti - 
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_01fadd25ace0e29e13612cc82ba3582d.setIcon(icon_35c422469f41ff627770534bd9f671ae);
+            
+    
+            var marker_77dbec3b598edbf65f375b3053463abb = L.marker(
+                [45.5552, 25.4545],
+                {
+}
+            ).addTo(marker_cluster_24f984daf64347292e3c076519140ba8);
+        
+    
+            var icon_4c9175654396b0fd970d0b65949f6c52 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_663e22eb448a89e99aa60691b3b1e768 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_b7388860dbb3473505ef88e1c55370b5 = $(`<div id="html_b7388860dbb3473505ef88e1c55370b5" style="width: 100.0%; height: 100.0%;"><b>Day 6</b>: Râșnov Citadel</div>`)[0];
+                popup_663e22eb448a89e99aa60691b3b1e768.setContent(html_b7388860dbb3473505ef88e1c55370b5);
+            
+        
+
+        marker_77dbec3b598edbf65f375b3053463abb.bindPopup(popup_663e22eb448a89e99aa60691b3b1e768)
+        ;
+
+        
+    
+    
+            marker_77dbec3b598edbf65f375b3053463abb.bindTooltip(
+                `<div>
+                     Day 6: Râșnov Citadel - 
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_77dbec3b598edbf65f375b3053463abb.setIcon(icon_4c9175654396b0fd970d0b65949f6c52);
+            
+    
+            var marker_d0c5f89ced4056a5da5657ae422d067e = L.marker(
+                [45.35, 25.4833],
+                {
+}
+            ).addTo(marker_cluster_24f984daf64347292e3c076519140ba8);
+        
+    
+            var icon_cad9856ced4528edffe491db0c631939 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2f7be00f9b51436e1cd9360ddce16385 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_3fa07d572baba28dab437a43f7247573 = $(`<div id="html_3fa07d572baba28dab437a43f7247573" style="width: 100.0%; height: 100.0%;"><b>Day 7</b>: Sinaia Monastery</div>`)[0];
+                popup_2f7be00f9b51436e1cd9360ddce16385.setContent(html_3fa07d572baba28dab437a43f7247573);
+            
+        
+
+        marker_d0c5f89ced4056a5da5657ae422d067e.bindPopup(popup_2f7be00f9b51436e1cd9360ddce16385)
+        ;
+
+        
+    
+    
+            marker_d0c5f89ced4056a5da5657ae422d067e.bindTooltip(
+                `<div>
+                     Day 7: Sinaia Monastery - Visiting the Sinaia Monastery
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_d0c5f89ced4056a5da5657ae422d067e.setIcon(icon_cad9856ced4528edffe491db0c631939);
+            
+    
+            var marker_0a9022d4c9bce72c249e5ab593b6d142 = L.marker(
+                [45.5442, 25.5343],
+                {
+}
+            ).addTo(marker_cluster_24f984daf64347292e3c076519140ba8);
+        
+    
+            var icon_a369d952474d45d1c2170a91e962b855 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f4e3a19c21d6d99927fad94f28d2eb9c = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_dbfb0bc5434407f9642b63e24b726f7b = $(`<div id="html_dbfb0bc5434407f9642b63e24b726f7b" style="width: 100.0%; height: 100.0%;"><b>Day 8</b>: Bran Castle</div>`)[0];
+                popup_f4e3a19c21d6d99927fad94f28d2eb9c.setContent(html_dbfb0bc5434407f9642b63e24b726f7b);
+            
+        
+
+        marker_0a9022d4c9bce72c249e5ab593b6d142.bindPopup(popup_f4e3a19c21d6d99927fad94f28d2eb9c)
+        ;
+
+        
+    
+    
+            marker_0a9022d4c9bce72c249e5ab593b6d142.bindTooltip(
+                `<div>
+                     Day 8: Bran Castle - 
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_0a9022d4c9bce72c249e5ab593b6d142.setIcon(icon_a369d952474d45d1c2170a91e962b855);
+            
+    
+            var marker_4df40a81e0d7a2ee5f88594e3a412303 = L.marker(
+                [46.5464, 24.5556],
+                {
+}
+            ).addTo(marker_cluster_24f984daf64347292e3c076519140ba8);
+        
+    
+            var icon_82d9acf37195321e32c4cffd39ef62d0 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_7289f16eac782f010d9266d671110314 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_7dfaaa6d0b49b5d71cf8710930368795 = $(`<div id="html_7dfaaa6d0b49b5d71cf8710930368795" style="width: 100.0%; height: 100.0%;"><b>Day 9</b>: Târgu Mureș</div>`)[0];
+                popup_7289f16eac782f010d9266d671110314.setContent(html_7dfaaa6d0b49b5d71cf8710930368795);
+            
+        
+
+        marker_4df40a81e0d7a2ee5f88594e3a412303.bindPopup(popup_7289f16eac782f010d9266d671110314)
+        ;
+
+        
+    
+    
+            marker_4df40a81e0d7a2ee5f88594e3a412303.bindTooltip(
+                `<div>
+                     Day 9: Târgu Mureș - 
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_4df40a81e0d7a2ee5f88594e3a412303.setIcon(icon_82d9acf37195321e32c4cffd39ef62d0);
+            
+    
+            var marker_57b22809d510e58c7a4de80f086953e7 = L.marker(
+                [46.6475, 23.6167],
+                {
+}
+            ).addTo(marker_cluster_24f984daf64347292e3c076519140ba8);
+        
+    
+            var icon_0b46dc9e73a137611a4746407965aa0e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_12fab69c58fad62d8f3ded098bdfcd19 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_ad3ea95163a7fe827e65adfe78008d19 = $(`<div id="html_ad3ea95163a7fe827e65adfe78008d19" style="width: 100.0%; height: 100.0%;"><b>Day 10</b>: Cluj-Napoca</div>`)[0];
+                popup_12fab69c58fad62d8f3ded098bdfcd19.setContent(html_ad3ea95163a7fe827e65adfe78008d19);
+            
+        
+
+        marker_57b22809d510e58c7a4de80f086953e7.bindPopup(popup_12fab69c58fad62d8f3ded098bdfcd19)
+        ;
+
+        
+    
+    
+            marker_57b22809d510e58c7a4de80f086953e7.bindTooltip(
+                `<div>
+                     Day 10: Cluj-Napoca - 
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_57b22809d510e58c7a4de80f086953e7.setIcon(icon_0b46dc9e73a137611a4746407965aa0e);
+            
+    
+            marker_cluster_24f984daf64347292e3c076519140ba8.addTo(map_5977824f2f0020bf77ed2a764135fcb2);
+        
+    
+            var poly_line_149caa41e55b2a18705205bc6e216f7e = L.polyline(
+                [[46.6475, 23.6167], [46.4833, 23.4667], [46.0333, 23.5], [46.2667, 24.4833], [46.1833, 25.0167], [45.5552, 25.4545], [45.35, 25.4833], [45.5442, 25.5343], [46.5464, 24.5556], [46.6475, 23.6167]],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_5977824f2f0020bf77ed2a764135fcb2);
+        
+</script>
+</html>
