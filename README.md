@@ -119,16 +119,3 @@ Uncomment this in `main()` to use:
 - Output CSV includes lat/lon and names per day
 
 ---
-
-## 🧠 Roadmap Ideas
-
-- Integrate LangGraph for retry/reasoning flow
-- Support hotels, distances, or live traffic APIs
-- Export to mobile formats (e.g., GPX, Google Maps)
-
----
-
-## 🧑‍💻 Author
-
-Built with ❤️ by [Your Name]  
-Feel free to fork and adapt it to your region or use case!
