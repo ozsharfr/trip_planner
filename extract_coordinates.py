@@ -15,37 +15,56 @@ def get_coordinates_from_query(result):
 
 def safe_extract_locations(llm_output: str):
     """
-    Extracts a list of trip locations from the LLM output string.
-    Handles extra text and mild formatting errors.
+    Safely extracts a list of trip locations from LLM output, correcting
+    broken floats, JSON-style nulls, and truncated lines.
     """
-    # 1. Try to extract the list part only
+
+    # 1. Extract the list
     start = llm_output.find('[')
     end = llm_output.rfind(']') + 1
     if start == -1 or end == -1:
-        print("Could not find list brackets in output.")
+        print("Could not find list brackets.")
         return []
 
     list_str = llm_output[start:end]
 
-    # 2. Sanitize broken float values (e.g., '27. organizes')
-    list_str = re.sub(r":\s*[\d]+\.\s*[a-zA-Z]+", ': null', list_str)
+    # 2. Normalize JSON-style to Python
+    list_str = list_str.replace("null", "None").replace("true", "True").replace("false", "False")
 
-    # 3. Try to parse using ast.literal_eval
+    # 3. Replace broken float-like values with None (handles: 27. organ')
+    list_str = re.sub(r":\s*[\d]+\.\s*[a-zA-Z]+'", ": None", list_str)
+
+    # 4. Optionally fix trailing commas inside lists
+    lines = list_str.strip().splitlines()
+    clean_lines = []
+    for line in lines:
+        line_cleaned = line.strip()
+        # Heuristic: keep only lines that end with }, or }
+        if line_cleaned.endswith("},") or line_cleaned.endswith("}"):
+            clean_lines.append(line_cleaned)
+        else:
+            print(f"Skipping malformed line: {line_cleaned}")
+
+    clean_list_str = "[" + "\n".join(clean_lines) + "]"
+
+    # 5. Evaluate
     try:
-        locations = ast.literal_eval(list_str)
+        locations = ast.literal_eval(clean_list_str)
     except Exception as e:
-        print(f"Failed to parse locations: {e}")
+        print(f"Still failed to parse: {e}")
+        print("Cleaned list string (preview):\n", clean_list_str[:500])
         return []
 
-    # 4. Validate lat/lon fields
+    # 6. Force lat/lon to float or None
     for loc in locations:
         for key in ['lat', 'lon']:
             try:
                 loc[key] = float(loc[key])
             except:
-                loc[key] = None  # fallback mechanism will fix later
+                loc[key] = None
 
     return locations
+
 
    
 def extract_coords_from_llm_result(result):
