@@ -17,13 +17,32 @@ def generate_map(locations, index):
 
     m = folium.Map(location=[avg_lat , avg_lon],zoom_start=8, tiles='CartoDB positron')
     marker_cluster = MarkerCluster().add_to(m)
-
+    
     for loc in locations:
+
+        day_number = loc['day']
+        div_icon = folium.DivIcon(
+            html=f"""
+                <div style="
+                    font-size: 14pt;
+                    color: white;
+                    background: #0074D9;
+                    border-radius: 50%;
+                    width: 36px;
+                    height: 36px;
+                    text-align: center;
+                    line-height: 36px;
+                    border: 2px solid #001F3F;
+                    box-shadow: 2px 2px 6px rgba(0,0,0,0.3);
+                ">{day_number}</div>
+            """
+        )
+    
         folium.Marker(
             location=[loc["lat"], loc["lon"]],
             popup=folium.Popup(f"<b>Day {loc['day']}</b>: {loc['name']}", max_width=250),
             tooltip=f"Day {loc['day']}: {loc['name']} - {loc.get('description', '')}",
-            icon=folium.Icon(color="blue", icon="info-sign")
+            icon=div_icon#folium.Icon(color="blue", icon="info-sign")
         ).add_to(marker_cluster)
 
     # Add route polyline

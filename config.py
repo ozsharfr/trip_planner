@@ -17,5 +17,7 @@ def get_config():
         duration = int(os.getenv("DURATION", 10))
         month = os.getenv("MONTH", "July")
         composition = os.getenv("COMPOSITION", "a family with young children")
+        location_val = os.getenv("LOCATION_VAL" , "False").lower() == 'true'
+        max_km_dist_per_day = int(os.getenv("MAX_KM_DIST_PER_DAY", "150"))
 
     return Config
