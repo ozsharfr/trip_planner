@@ -10,6 +10,7 @@ def get_config():
     class Config:
         MODEL_NAME = os.getenv("MODEL_NAME", "llama3")
         OLLAMA_HOST = os.getenv("OLLAMA_HOST", "http://localhost:11434")
+        GROQ_API_KEY = os.getenv("GROQ_API_KEY","")
         OPENAI_API_KEY = os.getenv("OPENAI_API_KEY",'')
         country = os.getenv("COUNTRY", "Romania")
         city_start = os.getenv("CITY_START", "Cluj Napoca")

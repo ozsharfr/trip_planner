@@ -41,6 +41,7 @@ def ignore_null_coords_locations(locations : list , locations_orig : list, index
         Remove locations with problematic coordinates.
         If ignore_geolocator is True, it will not use geolocator to fix coordinates.
         """
+        locations = [loc for loc in locations if loc.get("lat") is not None and loc.get("lon") is not None]
         df_locations = pd.DataFrame(locations)
         cols = ["lat", "lon"]
         df_coords = df_locations[cols]

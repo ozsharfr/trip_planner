@@ -36,7 +36,7 @@ def generate_map(locations, index):
         day_display = ','.join(days) if len(days) <= 3 else f"{days[0]}-{days[-1]}"
         
         # Create tooltip with all days
-        descriptions = [loc.get('description', '') for loc in group if loc.get('description')]
+        descriptions = [str(loc.get('description', '')) for loc in group if loc.get('description')]
         tooltip_text = f"Days {','.join(days)}: {location_name}"
         if descriptions:
             tooltip_text += f" - {'; '.join(set(descriptions))}"  # Remove duplicates

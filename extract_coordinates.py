@@ -47,8 +47,8 @@ def safe_extract_locations(llm_output: str):
     list_str = list_str.replace("null", "None").replace("true", "True").replace("false", "False")
 
     # 3. Replace broken float-like values with None (handles: 27. organ')
-    list_str = re.sub(r":\s*[\d]+\.\s*[a-zA-Z]+'", ": None", list_str)
-
+    list_str = re.sub(r":\s*\d+\.\s+[a-zA-Z]+'?", ": None", list_str)
+               
     try:
         locations = ast.literal_eval(list_str)
     except Exception as e:

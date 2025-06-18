@@ -1,4 +1,5 @@
 from langchain.prompts import PromptTemplate
+from langchain_groq import ChatGroq
 import time
 
 def _get_trip_prompt_template(Config):
@@ -93,22 +94,30 @@ Only return the list — no extra text or explanation.
     
     return PROMPT
     
-def main_plan_prompt(PROMPT: str , llm_model) -> str:
+def main_plan_prompt(PROMPT: str , Config) -> str:
         """
         Main function to generate the trip plan using the LLM.
         """
+        llm_model = ChatGroq(model="llama-3.3-70b-versatile", api_key=Config.GROQ_API_KEY)
 
-        prompt_template = PromptTemplate(
-        input_variables=["query"],
-        template=PROMPT
-        )   
-        
-        llm_chain = prompt_template | llm_model
-
-        input_data = {"query": PROMPT}
-        t = time.time()
-        result = llm_chain.invoke(input_data)
-        print (f"Time taken: {time.time() - t:.2f} seconds")
-
-
+        # Now this should work
+        result = llm_model.invoke(PROMPT)
+        result = result.content
         return result
+
+
+        # prompt_template = PromptTemplate(
+        # input_variables=["query"],
+        # template=PROMPT
+        # )   
+
+        # llm_model = OllamaLLM(model=Config.MODEL_NAME, base_url=Config.OLLAMA_HOST)        
+        # llm_chain = prompt_template | llm_model
+
+        # input_data = {"query": PROMPT}
+        # t = time.time()
+        # result = llm_chain.invoke(input_data)
+        # print (f"Time taken: {time.time() - t:.2f} seconds")
+
+
+        # return result

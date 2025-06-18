@@ -23,14 +23,12 @@ def main(index=0):
 
     PROMPT = _get_trip_prompt_template(Config)
     # --- Initialize LLM ---
-    llm_model = OllamaLLM(model=Config.MODEL_NAME, base_url=Config.OLLAMA_HOST)
+    # 
+    # Use the current working model
     # Run the main prompt to get the trip plan
-    result = main_plan_prompt(PROMPT, llm_model)
+    result = main_plan_prompt(PROMPT , Config)
     # --- Extract locations coordinates from the LLM result ---
     locations = extract_coords_from_llm_result(result)
-
-    # Experimental : # Uncomment to use an agent to validate and improve the trip plan
-    # locations_w_agent = try_agent(locations, llm_model)
 
     # Validate with geolocator. If coordinates significantly differ - query them again using LLM
     # if Config.location_val:    
@@ -47,6 +45,6 @@ def main(index=0):
     
 if __name__ == "__main__":
     Config = get_config()
-    for index in range(2):
+    for index in range(1):
         print(f"Running trip planner iteration {index + 1}...")
         main(index)
