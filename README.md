@@ -7,7 +7,7 @@ This project is an automated **LLM-based travel planner** that generates a multi
 
 #### Features
 
-- 🔮 Generates trip plans using a local LLM (via Ollama)
+- 🔮 Generates trip plans using a local LLM (via Groq)
 - 📍 Validates location coordinates with geopy and fallback LLM
 - 🧹 Filters out geographic outliers and invalid entries
 - 🗺️ Produces interactive maps with clustered markers and routes
@@ -35,50 +35,27 @@ trip_planner/
 #### Requirements
 
 - Python 3.8+
-- [Ollama](https://ollama.com/) installed and running locally
-- One of the supported LLMs downloaded (e.g., `llama3`)
+- Groq (Add it's API key)
 - Required Python packages:
 
-```bash
+
 pip install -r requirements.txt
-```
-
-Example `requirements.txt`:
-```txt
-langchain
-langchain-community
-langchain-ollama
-folium
-geopy
-pandas
-python-dotenv
-```
-
 ---
 
 #### Setup
 
-1. **Install Ollama**
-
-   See: https://ollama.com
-
-2. **Download your preferred model** (e.g. LLaMA 3):
-```bash
-ollama pull llama3
-```
-
-3. **Create a `.env` file** with the trip parameters:
+1. **Create a `.env` file** with the model key and trip parameters:
 
 ```env
-MODEL_NAME=llama3
-OLLAMA_HOST=http://localhost:11434
-
+GROQ_API_KEY=YOUR-KEY-HERE
 COUNTRY=Bulgaria
 CITY_START=Sofia
 CITY_END=Varna
 DURATION=10
 MONTH=July
 COMPOSITION=a family with young children
+...
+
 ```
 
 ---
@@ -86,7 +63,7 @@ COMPOSITION=a family with young children
 #### Run the Planner
 
 ```bash
-python trip_planner.py
+python main.py
 ```
 
 This will:

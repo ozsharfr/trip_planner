@@ -1,12 +1,9 @@
 
-from langchain_ollama import OllamaLLM
-from langchain.prompts import PromptTemplate
 from extract_coordinates import extract_coords_from_llm_result
 from multi_day_map import generate_map
 from config import get_config
 from remove_problemtaic_coords import ignore_null_coords_locations
 from prompt_trip import main_plan_prompt , _get_trip_prompt_template
-from agent_trip import try_agent
 from validate_locations_coords import validate_location
 
 # --- Run LangChain chain ---
@@ -23,8 +20,6 @@ def main(index=0):
 
     PROMPT = _get_trip_prompt_template(Config)
     # --- Initialize LLM ---
-    # 
-    # Use the current working model
     # Run the main prompt to get the trip plan
     result = main_plan_prompt(PROMPT , Config)
     # --- Extract locations coordinates from the LLM result ---
