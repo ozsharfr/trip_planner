@@ -7,3 +7,4 @@ python-dotenv
 geopy
 folium
 pandas
+streamlit
