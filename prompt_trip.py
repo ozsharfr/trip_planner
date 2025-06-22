@@ -66,9 +66,9 @@ Who: {Config.composition}
 How: Travel by car, staying in apartments.
 
 Preferences:
-- Enjoy nature, culture, and relaxation
+- Enjoy : {','.join(Config.preferences)}
 - Prefer well-known, or natural sites
-- Aim to build the route which will enable as least hoteling switches as possible 
+- Aim to build the route which will enable as least Staying locations switches as possible 
 
 Return the trip as a Python list of dictionaries.
 Each dictionary must include:
@@ -86,6 +86,7 @@ VERY IMPORTANT:
 - Do NOT invent places. Avoid ambiguous or generic names.Select locations that Nominatim can recognize.
 - No more than 2.5 hours drive per day
 - No more than {Config.max_km_dist_per_day * 1.5} kilometers per day
+- Do not change Staying location if it is less then 50 kilometers away from the next location
 
 
 Only return the list — no extra text or explanation.
