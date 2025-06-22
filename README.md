@@ -1,98 +1,88 @@
 
-### LLM-based Trip Planner
+# 🗺️ Travel Itinerary Generator
 
-This project is an automated **LLM-based travel planner** that generates a multi-day road trip tailored to your preferences. It uses a language model (via Ollama) to plan locations, validates and fixes coordinates, and renders an interactive map using Folium.
-
----
-
-#### Features
-
-- 🔮 Generates trip plans using a local LLM (via Groq)
-- 📍 Validates location coordinates with geopy and fallback LLM
-- 🧹 Filters out geographic outliers and invalid entries
-- 🗺️ Produces interactive maps with clustered markers and routes
-- 🧠 Optional LangChain Agent to refine ambiguous results
+This is an interactive travel planning tool powered by a language model (LLM) and a simple Streamlit UI.  
+It generates a multi-day itinerary and map based on your preferences, including country, travel style, trip duration, and more.
 
 ---
 
-#### Project Structure
+## 📦 Requirements
+
+- Python 3.8 or higher
+- Recommended: VS Code or any IDE with terminal support
+
+### Python packages
+
+Install required dependencies:
 
 ```bash
-trip_planner/
-├── trip_planner.py                 # Main entry point
-├── config.py                       # Loads environment variables
-├── extract_coordinates.py          # Parses and sanitizes LLM outputs
-├── prompt_trip.py                  # Trip planning prompts and LLM calls
-├── remove_problemtaic_coords.py    # Outlier filtering logic
-├── map.py                          # Folium map generation
-├── agent_trip.py                   # Optional LangChain agent tools
-├── output/                         # Generated maps and location CSVs
-└── .env                            # User-defined trip config
+pip install streamlit openai geopy
 ```
 
 ---
 
-#### Requirements
+## 🚀 How to Run
 
-- Python 3.8+
-- Groq (Add it's API key)
-- Required Python packages:
+### 1. Clone the repository or place the code files in a folder.
+### 1a. Make sure to have an API key for Groq llm, otherwise , select your own LLM with respective API and apply in main code
 
-
-pip install -r requirements.txt
----
-
-#### Setup
-
-1. **Create a `.env` file** with the model key and trip parameters:
-
-```env
-GROQ_API_KEY=YOUR-KEY-HERE
-COUNTRY=Bulgaria
-CITY_START=Sofia
-CITY_END=Varna
-DURATION=10
-MONTH=July
-COMPOSITION=a family with young children
-...
-
-```
-
----
-
-#### Run the Planner
+### 2. Run the app using Python:
 
 ```bash
-python main.py
+python -m streamlit run streamlit_app.py
 ```
 
-This will:
-- Generate a trip plan for the given settings
-- Fix any coordinate or geolocation issues
-- Save the map to: `output/trip_map_0.html`, `output/locations0.csv`, etc.
+> ⚠️ If `streamlit` is not recognized, use the command above instead of `streamlit run ...`.
 
 ---
 
-#### Optional: Use Agent for Validation
+## 🧾 What It Does
 
-You can enable a LangChain agent that uses tools like:
-- `geopy_lookup`: for real coordinate lookups
-- `llm_coord_fallback`: for LLM-based correction
-- `rerun_single_day`: re-generates problematic days
-
-Uncomment this in `main()` to use:
-```python
-# locations_w_agent = try_agent(locations, llm_model)
-```
+The app:
+1. Lets you input travel parameters (start city, duration, preferences, etc.).
+2. Sends a prompt to a language model to generate a route.
+3. Extracts the locations and coordinates.
+4. Displays an interactive map with the suggested route.
 
 ---
 
-#### Example Output
+## 📋 Input Parameters
 
-![screenshot](output/Screenshot.png)
+The app will ask you for:
+- **Country** – The country of travel
+- **Start / End City** – Trip starting and ending locations
+- **Trip Composition** – E.g., Solo, Family, Couple, etc.
+- **Trip Duration** – Number of days
+- **Max Distance Per Day** – Travel pacing
+- **Month** – Travel time for weather/seasonal context
+- **Preferences** – Choose from:
+  - Nature
+  - Culture
+  - Relaxation
+  - Adventure
+  - etc..
 
-- **Blue markers** = trip days
-- **Red line** = driving route
-- Output CSV includes lat/lon and names per day
+---
+
+## 📍 Output
+
+- A dynamic map (`map_<id>.html`) will be generated.
+- The map will also appear embedded inside the Streamlit app.
+
+---
+
+## 🛠️ Notes
+
+- You may need to replace or configure the LLM backend (`main_plan_prompt`) using OpenAI or another provider.
+- If using `.env` previously, this app now takes user inputs via UI instead.
+
+---
+
+## 🧑‍💻 Dev Tips
+
+- Prompt templates are built in `_get_trip_prompt_template()`
+- The file `main.py` contains the main planning logic
+- `streamlit_app.py` is the app entry point
+- Coordinates are extracted and validated using `geopy`
 
 ---
